@@ -1,13 +1,16 @@
 <!--
-flexbox.html illustrates the usage of a flexbox
+Build-a-Portfolio Project in the Full Stack Web Developer Nanodegree
+flexbox.html illustrates the usage of a flexbox (Lesson 3) with a
+working example deployed at jsfiddle.net - https://jsfiddle.net/riasc/2r01braa/10/
 -->
 <html>
 <head>
-    <style type=“text/css”>
+    <style>
         .container {
             display: flex;
             flex-wrap: wrap;
         }
+
         .box {
             height: 100px;
             text-align: center;
@@ -15,54 +18,57 @@ flexbox.html illustrates the usage of a flexbox
         }
 
         header {
-            width: 100%;
-            order: 1;
+          width: 100%;
+          order: 1;
+          background-color: lime;
         }
 
         .red {
-            width: 50%;
-            order: 2;
-            background-color: red;
+          width: 50%;
+          order: 2;
+          background-color: red;
         }
 
         .orange {
-            width: 50;
-            order: 3;
-            background-color: orange;
+          width: 50%;
+          order: 3;
+          background-color: orange;
         }
 
         footer {
-            width: 100%;
-            order: 4;
+          width: 100%;
+          order: 4;
+          background-color: magenta;
         }
 
         .light_blue {
-            width: 20%;
-            order: 5;
+          width: 20%;
+          order: 5;
+          background-color: lightblue;
         }
 
         .dark_blue {
-            width: 60%;
-            order: 6;
-            background-color: darkblue;
+          width: 60%;
+          order: 6;
+          background-color: blue;
         }
 
         .green {
-            width: 20%;
-            order: 7;
-            background-color: green;
+          width: 20%;
+          order: 7;
+          background-color: green;
         }
    </style>
 </head>
 <body>
     <div class="container">
-        <header class="box"></header>
-        <div class="box dark_blue"></div>
-        <div class="box light_blue"></div>
-        <div class="box green"></div>
+        <header class="box lime"></header>
         <div class="box red"></div>
         <div class="box orange"></div>
-
+        <footer class="box"></footer>
+        <div class="box light_blue"></div>
+        <div class="box dark_blue"></div>
+        <div class="box green"></div>
     </div>
 </body>
 </html>
