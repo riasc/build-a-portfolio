@@ -4,71 +4,86 @@ flexbox.html illustrates the usage of a flexbox (Lesson 3) with a
 working example deployed at jsfiddle.net - https://jsfiddle.net/riasc/2r01braa/10/
 -->
 <html>
-<head>
-    <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
+    <head>
+        <meta name=“viewport” content=“width=device-width, init-scale=“1”>
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+            }
 
-        .box {
-            height: 100px;
-            text-align: center;
-            width: 100%;
-        }
+            .box {
+                height: 100px;
+                text-align: center;
+                width: 100%;
+            }
 
-        header {
-          width: 100%;
-          order: 1;
-          background-color: lime;
-        }
 
-        .red {
-          width: 50%;
-          order: 2;
-          background-color: red;
-        }
+            header {
+                width: 100%;
+                order: 1;
+                background-color: lime;
+            }
 
-        .orange {
-          width: 50%;
-          order: 3;
-          background-color: orange;
-        }
+            .red {
+              width: 50%;
+              order: 2;
+              background-color: red;
+            }
 
-        footer {
-          width: 100%;
-          order: 4;
-          background-color: magenta;
-        }
+            .orange {
+              width: 50%;
+              order: 3;
+              background-color: orange;
+            }
 
-        .light_blue {
-          width: 20%;
-          order: 5;
-          background-color: lightblue;
-        }
+            footer {
+                width: 100%;
+                order: 4;
+                background-color: magenta;
+            }
 
-        .dark_blue {
-          width: 60%;
-          order: 6;
-          background-color: blue;
-        }
+            .light_blue {
+              width: 20%;
+              order: 5;
+              background-color: lightblue;
+            }
 
-        .green {
-          width: 20%;
-          order: 7;
-          background-color: green;
-        }
-   </style>
-</head>
-<body>
-    <div class="container">
-        <header class="box lime"></header>
-        <div class="box red"></div>
-        <div class="box orange"></div>
-        <footer class="box"></footer>
-        <div class="box light_blue"></div>
-        <div class="box dark_blue"></div>
-        <div class="box green"></div>
-    </div>
-</body>
+            .dark_blue {
+              width: 60%;
+              order: 6;
+              background-color: blue;
+            }
+
+            .green {
+              width: 20%;
+              order: 7;
+              background-color: green;
+            }
+
+            @media screen and (min-width: 700px) {
+                header { order: 1; }
+                .red { order: 6; }
+                .orange { order: 7; }
+                footer { order: 5; }
+                .light_blue { order: 2; }
+                .dark_blue { order: 3; }
+                .green { order: 4; }
+
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="box"></header>
+            <div class="box red"></div>
+            <div class="box orange"></div>
+            <footer class="box"></footer>
+            <div class="box light_blue"></div>
+            <div class="box dark_blue"></div>
+            <div class="box green"></div>
+        </div>
+    </body>
 </html>
