@@ -1,0 +1,100 @@
+<!--
+Build-a-Portfolio Project in the Full Stack Web Developer Nanodegree
+mostlyfluid.html illustrates the usage of a flexbox with the off canvas
+pattern (Lesson 4)
+-->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width", init-scale="1">
+    <style>
+        html, body, main {
+            height: 100%; /* make sure the elements take the full viewport width */
+            width: 100%;
+        }
+
+        .dark_blue {
+            background-color: blue;
+        }
+
+        .light_blue {
+            background-color: lightblue;
+        }
+
+
+        nav {
+            width: 300px;
+            position: absolute;
+            /* this transform moves the drawer off canvas */
+            transform: translate(-300px, 0);
+            /* optionally, we animate the drawer */
+            transition: transform 0.3s ease;
+        }
+
+        nav.open {
+            -webkit-transform: translate(0,0);
+            transform: translate (0,0);
+        }
+
+        @media screen and (mind-width: 600px) {
+            nav {
+                position: relative;
+                transform: translate(0,0);
+            }
+
+            body {
+                display: flex;
+                flex-flow: row nowrap;
+            }
+
+            main {
+                width: auto;
+                flex-grow: 1;
+            }
+        }
+
+    </style>
+    <script>
+      /*
+       * Open the drawer when the menu ison is clicked.
+       */
+      var menu = document.querySelector('#menu');
+      var main = document.querySelector('main');
+      var drawer = document.querySelector('#drawer');
+
+      menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+      });
+      main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+    </script>
+</head>
+<body>
+
+    <nav id="drawer" class="dark_blue">
+
+    </nav>
+
+    <main class="light_blue">
+        <a id="menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+        </svg>
+        </a>
+    </main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
