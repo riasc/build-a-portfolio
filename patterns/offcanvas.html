@@ -8,18 +8,19 @@ pattern (Lesson 4)
     <meta name="viewport" content="width=device-width", init-scale="1">
     <style>
         html, body, main {
+            font-family: 'Roboto', sans-serif;
             height: 100%; /* make sure the elements take the full viewport width */
             width: 100%;
         }
 
         .dark_blue {
-            background-color: blue;
+            background-color: #2A457A;
+            color: #efefef
         }
 
         .light_blue {
-            background-color: lightblue;
+            background-color: #099DD9;
         }
-
 
         a#menu svg {
             width: 40px;
@@ -36,11 +37,16 @@ pattern (Lesson 4)
         }
 
         nav.open {
-            -webkit-transform: translate(0,0);
+            /*-webkit-transform: translate(0,0);*/
             transform: translate (0,0);
         }
 
-        @media screen and (mind-width: 600px) {
+        nav, main {
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        @media screen and (min-width: 600px) {
             nav {
                 position: relative;
                 transform: translate(0,0);
@@ -78,7 +84,8 @@ pattern (Lesson 4)
 <body>
 
     <nav id="drawer" class="dark_blue">
-
+        <h2>Off Canvas</h2>
+        <p>Click outside the drawer to close</p>
     </nav>
 
     <main class="light_blue">
@@ -87,18 +94,11 @@ pattern (Lesson 4)
             <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
             </svg>
         </a>
+        <p> Click on the menu icon to open the drawer</p>
     </main>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
