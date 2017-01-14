@@ -7,12 +7,6 @@ pattern (Lesson 4)
 <head>
     <meta name="viewport" content="width=device-width", init-scale="1">
     <style>
-        html, body, main {
-            font-family: 'Roboto', sans-serif;
-            height: 100%; /* make sure the elements take the full viewport width */
-            width: 100%;
-        }
-
         .dark_blue {
             background-color: #2A457A;
             color: #efefef;
@@ -21,11 +15,28 @@ pattern (Lesson 4)
         .light_blue {
             background-color: #099DD9;
         }
+    </style>
+
+    <style>
+        html, body, main {
+            font-family: 'Roboto', sans-serif;
+            height: 100%; /* make sure the elements take the full viewport width */
+            width: 100%;
+        }
 
         a#menu svg {
             width: 40px;
             fill: #000;
         }
+
+        nav, main {
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        /*
+         * Off Canvas Layout Styles
+        */
 
         nav {
             width: 300px;
@@ -38,15 +49,10 @@ pattern (Lesson 4)
         }
 
         nav.open {
-            transform: translate (0,0);
+            transform: translate(0,0);
         }
 
-        nav, main {
-            padding: 1em;
-            box-sizing: border-box;
-        }
-
-        @media screen and (min-width: 600px) {
+        @media (min-width: 600px) {
             nav {
                 position: relative;
                 transform: translate(0,0);
@@ -63,22 +69,7 @@ pattern (Lesson 4)
             }
         }
     </style>
-    <script>
-      /*
-       * Open the drawer when the menu ison is clicked.
-       */
-      var menu = document.querySelector('#menu');
-      var main = document.querySelector('main');
-      var drawer = document.querySelector('#drawer');
 
-      menu.addEventListener('click', function(e) {
-        drawer.classList.toggle('open');
-        e.stopPropagation();
-      });
-      main.addEventListener('click', function() {
-        drawer.classList.remove('open');
-      });
-    </script>
 </head>
 <body>
     <nav id="drawer" class="dark_blue">
@@ -94,6 +85,30 @@ pattern (Lesson 4)
         </a>
         <p>Click on the menu icon to open the drawer</p>
     </main>
+
+    <!--
+        recover nav to main canvas
+        needs to be located after the DOM definitions
+    -->
+    <script>
+      /*
+       * Open the drawer when the menu ison is clicked.
+       */
+        var menu = document.querySelector('#menu');
+        var main = document.querySelector('main');
+        var drawer = document.querySelector('#drawer');
+
+        console.log(menu);
+        console.log(menu);
+        console.log(menu);
+        menu.addEventListener('click', function(e) {
+            drawer.classList.toggle('open');
+            e.stopPropagation();
+        });
+        main.addEventListener('click', function() {
+            drawer.classList.remove('open');
+        });
+    </script>
 </body>
 </html>
 
