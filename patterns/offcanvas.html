@@ -15,7 +15,7 @@ pattern (Lesson 4)
 
         .dark_blue {
             background-color: #2A457A;
-            color: #efefef
+            color: #efefef;
         }
 
         .light_blue {
@@ -29,6 +29,7 @@ pattern (Lesson 4)
 
         nav {
             width: 300px;
+            height: 100%;
             position: absolute;
             /* this transform moves the drawer off canvas */
             transform: translate(-300px, 0);
@@ -37,7 +38,6 @@ pattern (Lesson 4)
         }
 
         nav.open {
-            /*-webkit-transform: translate(0,0);*/
             transform: translate (0,0);
         }
 
@@ -62,7 +62,6 @@ pattern (Lesson 4)
                 flex-grow: 1;
             }
         }
-
     </style>
     <script>
       /*
@@ -82,7 +81,6 @@ pattern (Lesson 4)
     </script>
 </head>
 <body>
-
     <nav id="drawer" class="dark_blue">
         <h2>Off Canvas</h2>
         <p>Click outside the drawer to close</p>
@@ -91,12 +89,11 @@ pattern (Lesson 4)
     <main class="light_blue">
         <a id="menu">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+                <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
             </svg>
         </a>
-        <p> Click on the menu icon to open the drawer</p>
+        <p>Click on the menu icon to open the drawer</p>
     </main>
-
 </body>
 </html>
 
