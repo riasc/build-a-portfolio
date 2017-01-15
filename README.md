@@ -3,6 +3,20 @@
 This project is part of the Full Stack Web Developer Nanodegree of Udacity
 with the goal of recreating a provided design mockup.
 
+## Viewport
+The viewport defines the area the browser can render content to. Browser report the
+width in the number of DIPs (Device Independent Pixels) that is a unit of measurement
+that relates pixels to a real distance. Any DIP will take up the same amount of space
+on a display regardless of the pixel density of the display. If no viewport is set the
+browser renders the page for a screen with `980` pixels. In that regard, the
+DPR (Device Pixel Ratio) is the ratio between physical and logical pixels.
+If a mobile screen has a resolution of `1920x1080` px with a DPR of 2 the maximum
+width of a viewport in CSS pixel is `960`.
+
+`<meta name=“viewport” content=“width=device-width, init-scale=“1”>`
+
+
+
 ## Files
 Illustration of the most common responsive flexbox layouts that reside inside
 the [`./flexbox`](./flexbox) folder and described in the following:
