@@ -16,7 +16,7 @@ Demo can be found [here](http://htmlpreview.github.io/?https://github.com/riasc/
 * [`./flexbox/mostlyfluid.html`](./flexbox/mostlyfluid.html) implements the responsive
 mostlyfluid flexbox pattern. At its narrowest viewport the layout is stacked, but as the
 layout gets wider the grid pattern starts to appear. Once the layout hits its largest
-viewport, instead of expanding, margins are added to the left and the right. Breakpoints are set at `450px`, `550px` and `700px`. Demo can be found [here](http://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/flexbox/mostlyfluid.html). `[./flexbox/pattern-mostly-fluid-quiz-blankcss.html`](./flexbox/pattern-mostly-fluid-quiz-blankcss.html`) depicts a mostly fluid layout with more segments.
+viewport, instead of expanding, margins are added to the left and the right. Breakpoints are set at `450px`, `550px` and `700px`. Demo can be found [here](http://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/flexbox/mostlyfluid.html). [`./flexbox/pattern-mostly-fluid-quiz-blankcss.html`](./flexbox/pattern-mostly-fluid-quiz-blankcss.html`) depicts a mostly fluid layout with more segments.
 
 * [`./flexbox/layoutshifter.html`](./flexbox/layoutshifter.html) implements the
 responsive layoutshifter flexbox pattern. At the beginning (width less than 500px)
