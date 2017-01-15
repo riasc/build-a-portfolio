@@ -18,19 +18,45 @@ width of a viewport in CSS pixel is `960`.
 ```
 
 ```css
-// max-width on elements prevents overflowing
+/* max-width on elements prevents overflowing */
 img, embed, object, video {
     max-width: 100%;
 }
 ```
 
 ```css
-// buttons should be at least 48 pixels wide and 48 pixels tall
+/* buttons should be at least 48 pixels wide and 48 pixels tall */
 nav a, button {
     min-width:  48px;
     min-height: 48px;
 }
 ```
+
+## Media Queries
+Different styles needs to be applied on different devices. Media Queries allow
+to selectively apply css.
+
+```html
+<link rel=“stylesheet” href=“styles.css”>
+<!-- stylesheet over500.css is only applied when the screen is over 500 pixels -->
+<link rel=“stylesheet” media=“screen and (min-width:500px)” href=“over500.css”>
+```
+
+Media Queries can also be embedded:
+
+```css
+@media screen and (min-width:500px) {
+    body { background-color: blue; }
+}
+```
+
+Weigh the costs between linked css and @media:
+* linked css: many small files but many http requests
+* @media: fewer requests with bigger files
+
+Media queries that are most commonly used are `min-width` and `max-width`. The point
+at which the page changes layout is called a breakpoint.
+
 
 ## Files
 Illustration of the most common responsive flexbox layouts that reside inside
