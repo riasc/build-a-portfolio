@@ -1,7 +1,7 @@
 # Project: Build a Portfolio
 ## Objective
-This project is part of the Full Stack Web Developer Nanodegree of Udacity
-with the goal of recreating a provided design mockup.
+This project is part of the [Full Stack Web Developer Nanodegree](https://de.udacity.com/course/full-stack-web-developer-nanodegree--nd004/) with the goal of recreating
+a design mockup.
 
 ## Viewport
 The viewport defines the area the browser can render content to. Browser report the
@@ -13,9 +13,24 @@ DPR (Device Pixel Ratio) is the ratio between physical and logical pixels.
 If a mobile screen has a resolution of `1920x1080` px with a DPR of 2 the maximum
 width of a viewport in CSS pixel is `960`.
 
-`<meta name=“viewport” content=“width=device-width, init-scale=“1”>`
+```html
+<meta name=“viewport” content=“width=device-width, init-scale=“1”>`
+```
 
+```css
+// max-width on elements prevents overflowing
+img, embed, object, video {
+    max-width: 100%;
+}
+```
 
+```css
+// buttons should be at least 48 pixels wide and 48 pixels tall
+nav a, button {
+    min-width:  48px;
+    min-height: 48px;
+}
+```
 
 ## Files
 Illustration of the most common responsive flexbox layouts that reside inside
