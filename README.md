@@ -54,11 +54,10 @@ Weigh the costs between linked css and @media:
 * linked css: many small files but many http requests
 * @media: fewer requests with bigger files
 
-Media queries that are most commonly used are `min-width` and `max-width`. The point
-at which the page changes layout is called a breakpoint.
+Media queries that are most commonly used are `min-width` and `max-width`.
+The point at which the page changes layout is called a breakpoint.
 
-
-## Files
+## Flexbox
 Illustration of the most common responsive flexbox layouts that reside inside
 the [`./flexbox`](./flexbox) folder and described in the following:
 * [`./flexbox/flexbox.html`](./flexbox/flexbox.html) implements the flexbox layout illustrating the order property for rearranging the order of the sections.
