@@ -29,6 +29,7 @@ ul {
 a#menu svg {
     width: 40px;
     fill: #000;
+    margin-top: 5%;
 }
 
 
@@ -94,12 +95,15 @@ a#menu svg {
 
 
 .nav {
-  width: 100%;
+  width: 300px;
+  height: 300px;
   position: absolute;
+  border-width: 10px;
   transform: translate(-300px,0);
   transition: transform 0.3s ease;
-  /*margin-left: auto;
-  margin-right: auto;*/
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
 }
 
 .nav__list {
@@ -131,6 +135,8 @@ a#menu svg {
 
 .nav.open {
   transform: translate(0,0);
+  /* make nav appear always on top */
+  z-index: 100;
 }
 
 
@@ -411,10 +417,3 @@ footer a {
     width: 50%;
   }
 }
-
-/*@media screen and (min-width: 600px) {
-  nav {
-    position: relative;
-    transform: translate(0,0);
-  }
-}*/
