@@ -14,7 +14,7 @@ If a mobile screen has a resolution of `1920x1080` px with a DPR of 2 the maximu
 width of a viewport in CSS pixel is `960`.
 
 ```html
-<meta name=“viewport” content=“width=device-width, init-scale=“1”>`
+<meta name=“viewport” content="width=device-width", init-scale=“1”>`
 ```
 
 ```css
@@ -85,8 +85,16 @@ enough (greater than `300px`). Demo can be found [here](http://htmlpreview.githu
 * [`./Hometown/`](./Hometown) implements the first part of the "Building the Home Town App".
 A [viewport](#viewport) was added to the page with an initial scale set. Furthermore,
 the css was adjusted so that everything displays in a single column, that has been done
-with relative widths `(max-width: 100%)`. Finally, the touch targets on the navigation bar where increased by adding paddings to the `<a> tag` of the `nav` class `(padding: 1.5em)`,
+with relative widths `(max-width: 100%)`. Finally, the touch targets on the navigation bar where increased by adding paddings to the <a> tag of the nav class `(padding: 1.5em)`,
 resulting in targets greater than the suggested 48 pixels wide and 48 pixels tall.
 
 * [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
 hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width.
+
+## Responsive Tables
+Tables can force horizontal scrolling when the viewport is overflowed. There are several
+techniques to prevent this effect (hidden columns, no more tables, contained tables).
+* [`./responsive tables/hiddencolumns.html`](./responsive tables/hiddencolumns.html)
+impelements the hidden columns approach where the columns are hidden based on their
+importance as the viewport size gets smaller. In this example of baseball scores, only
+the short names of the team and the final scores are shown up to a viewport size of 400 pixels. If the viewport exceeds 400 pixels the long names of the teams and the scores of all innings are shown. `display: none` allows the standard cells to be hidden.

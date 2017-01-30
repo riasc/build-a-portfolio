@@ -1,0 +1,82 @@
+<!-- Implementation of the hidden columns techniques to display tables without
+overflowing the viewport (Lesson 5) -->
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width", init-scale="1">
+    <style type="text/css">
+        body {
+            margin: 1em;
+        }
+
+        td.header {
+            font-weight: bold;
+        }
+
+        .shortname {
+            display: none;
+        }
+
+        @media screen and (max-width: 400px) {
+            .shortname {
+                display: block;
+            }
+            .longname {
+                display: none;
+            }
+            .inning {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+    <tr>
+            <td class="header team" align="center">Team</td>
+            <td class="inning header">1st</td>
+            <td class="inning header">2nd</td>
+            <td class="inning header">3rd</td>
+            <td class="inning header">4th</td>
+            <td class="inning header">5th</td>
+            <td class="inning header">6th</td>
+            <td class="inning header">7th</td>
+            <td class="inning header">8th</td>
+            <td class="inning header">9th</td>
+            <td class="final header">Final</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="shortname">TOR</span>
+                <span class="longname">Toronto Blue Jays</span>
+            </td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">4</td>
+            <td class="inning">0</td>
+            <td class="inning">1</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="final">5</td>
+        </tr>
+        <tr>
+            <td>
+                <span class="shortname">SF</span>
+                <span class="longname">San Francisco Giants</span>
+            </td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">4</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="inning">0</td>
+            <td class="final">5</td>
+        </tr>
+    </table>
+</body>
+</html>
