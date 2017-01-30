@@ -57,7 +57,7 @@ Weigh the costs between linked css and @media:
 Media queries that are most commonly used are `min-width` and `max-width`.
 The point at which the page changes layout is called a breakpoint.
 
-## Flexbox
+## <a name="flexbox"></a>Flexbox
 Illustration of the most common responsive flexbox layouts that reside inside
 the [`./flexbox`](./flexbox) folder and described in the following:
 * [`./flexbox/flexbox.html`](./flexbox/flexbox.html) implements the flexbox layout illustrating the order property for rearranging the order of the sections.
@@ -83,6 +83,5 @@ enough (greater than `300px`). Demo can be found [here](http://htmlpreview.githu
 
 ## Building the Home Town App
 * [`./Hometown/`](./Hometown)
-* [`./Hometown 2`](./Hometown 2) implements the second part of the `Building the Home Town App` with the goal to pick a set of breakpoints and using one of the [flexbox patterns](## Flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather is arranged next to each other. Furthermore, the
-hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying
-margins around this container for devices with a greater width.
+* [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
+hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width.
