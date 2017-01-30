@@ -136,5 +136,45 @@ This is supported by the fact, that the average webpage makes 56 requests for im
 Each of these requests has a cost in page load where even small delays in pages can
 have a significant loss in traffic and revenue for that page.
 
-### Sizing
-With fixed image size (e.g., natural size of the image) resizing the window will cause cropping of the image and on mobile devices the image could end up being larger than the viewport, which means that in order to see the whole image one would have to scroll horizontally.
+With fixed image size (e.g., natural size of the image) resizing the window will cause cropping of the image and on mobile devices the image could end up being larger than the viewport, which means that in order to see the whole image one would have to scroll horizontally. When using relative sizing (`width: 100%`) it looks good in the smaller
+browser windows and on mobile devices, but the window is resized the image gets blurry.
+If `max-width: 100%` will only expand as wide as its natural width. Relative sizing also
+helpful when two images need to be places side by side.
+```css
+img {
+    width: 50%;
+}
+```
+When there should be a 10% margin between the images, absolute and relative values need to be combined where `calc` comes in handy.
+```css
+img {
+   margin-right: 10px;
+   width: calc((100%-10px)/2);
+}
+```
+Furthermore, the `img:last-of-type` selector to ensure that there is only a margin between the images and none to the right of the second image.
+```css
+img:last-of-type {
+    margin-right: 0;
+}
+```
+An image can responsively cover the whole height of the viewport. Obviously this can
+be done by setting `height: 100%`, but that only works if the height of the html and
+the body elements are also set to 100%. A simple way is to use the vh-unit,
+that stands for "viewport height". One vh corresponds to one percent of viewport height,
+so `height: 100vh` means 100% height. Similarly, the vw can be applied for "viewport width".
+Another common responsive use case is when an image should resize to fit the smaller of height or width of the viewport. The vmin unit (viewport minimum) corresponds to one percent of the viewport width or height (whichever is smaller). Setting
+`width: 100vmin; height: 100vmin` will get this effect. If an image should cover the whole
+viewport without stretching or squashing the vmax unit can be applied. Its corresponds to one percent of the viewport width or height (whichever is greater). Setting
+`width: 100vmax; height: 100vmax` the image responsively resizes to cover the viewport.
+
+There are two ways to store image responsively: raster and vectors:
+* Raster images: photographs and images are represented as a grid of individual dots of color. These images may come from camera or scanner and will be created with the html canvas elements.
+* Vector images: logos can be defined as a set of curves, lines, shapes, fill colors and gradients. Can be created by Inkscape or Adobe Illustrator or by using a vector format such
+as svg (scalable vector graphic) that makes it possible to include responsive vector graphics in a webpage
+
+The advantage of the vector file formats over raster file formats is that the browser can
+render a vector image at any size. After all vectors graphics describe the geometry of the image and not the individuals dots of color.
+
+
+
