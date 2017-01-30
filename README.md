@@ -3,7 +3,7 @@
 This project is part of the [Full Stack Web Developer Nanodegree](https://de.udacity.com/course/full-stack-web-developer-nanodegree--nd004/) with the goal of recreating
 a design mockup.
 
-## Viewport
+## <a href="viewport"></a>Viewport
 The viewport defines the area the browser can render content to. Browser report the
 width in the number of DIPs (Device Independent Pixels) that is a unit of measurement
 that relates pixels to a real distance. Any DIP will take up the same amount of space
@@ -82,6 +82,11 @@ used content (e.g., navigation) off screen only showing them if the screen is la
 enough (greater than `300px`). Demo can be found [here](http://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/flexbox/offcanvas.html).
 
 ## Building the Home Town App
-* [`./Hometown/`](./Hometown)
+* [`./Hometown/`](./Hometown) implements the first part of the "Building the Home Town App".
+A [viewport](#viewport) was added to the page with an initial scale set. Furthermore,
+the css was adjusted so that everything displays in a single column, that has been done
+with relative widths `(max-width: 100%)`. Finally, the touch targets on the navigation bar where increased by adding paddings to the `<a> tag` of the `nav` class `(padding: 1.5em)`,
+resulting in targets greater than the suggested 48 pixels wide and 48 pixels tall.
+
 * [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
 hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width.
