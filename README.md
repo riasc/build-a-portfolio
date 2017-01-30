@@ -93,7 +93,12 @@ resulting in targets greater than the suggested 48 pixels wide and 48 pixels tal
 * [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
 hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%202/index.html)
 
-* * [`./Hometown 3`](./Hometown 3) implements the final part of the "Building the Home Town App" with the goal
+* [`./Hometown 3`](./Hometown 3) implements the final part of the "Building the Home Town App" with the goal of updating the sports table, with the favorite team, break up the text
+if possible, include minor breakpoints and change the text so that it fits more naturally.
+The score table was updated with the last results of the football team from cologne.
+Setting `font-size: 14px; line-height: 1.2em;` in the content class applied the increased
+font-size for all the text on the page and improved its readability. Furthermore, minor breakpoints were applied to the weather section `(font-weight: bold; font-size: 5em;)`.
+Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%203/index.html)
 
 ## Responsive Tables
 Tables can force horizontal scrolling when the viewport is overflowed. There are several
@@ -136,7 +141,7 @@ This is supported by the fact, that the average webpage makes 56 requests for im
 Each of these requests has a cost in page load where even small delays in pages can
 have a significant loss in traffic and revenue for that page.
 
-With fixed image size (e.g., natural size of the image) resizing the window will cause cropping of the image and on mobile devices the image could end up being larger than the viewport, which means that in order to see the whole image one would have to scroll horizontally. When using relative sizing (`width: 100%`) it looks good in the smaller
+With fixed image size (e.g., natural size of the image) resizing the window will cause cropping of the image and on mobile devices the image could end up being larger than the viewport, which means that in order to see the whole image one would have to scroll horizontally. When using relative sizing `(width: 100%)` it looks good in the smaller
 browser windows and on mobile devices, but the window is resized the image gets blurry.
 If `max-width: 100%` will only expand as wide as its natural width. Relative sizing also
 helpful when two images need to be places side by side.
@@ -164,11 +169,11 @@ the body elements are also set to 100%. A simple way is to use the vh-unit,
 that stands for "viewport height". One vh corresponds to one percent of viewport height,
 so `height: 100vh` means 100% height. Similarly, the vw can be applied for "viewport width".
 Another common responsive use case is when an image should resize to fit the smaller of height or width of the viewport. The vmin unit (viewport minimum) corresponds to one percent of the viewport width or height (whichever is smaller). Setting
-`width: 100vmin; height: 100vmin` will get this effect. If an image should cover the whole
+`width: 100vmin; height: 100vmin;` will get this effect. If an image should cover the whole
 viewport without stretching or squashing the vmax unit can be applied. Its corresponds to one percent of the viewport width or height (whichever is greater). Setting
-`width: 100vmax; height: 100vmax` the image responsively resizes to cover the viewport.
+`width: 100vmax; height: 100vmax;` the image responsively resizes to cover the viewport.
 
-There are two ways to store image responsively: raster and vectors:
+There are two ways to store image responsively - raster and vectors:
 * Raster images: photographs and images are represented as a grid of individual dots of color. These images may come from camera or scanner and will be created with the html canvas elements.
 * Vector images: logos can be defined as a set of curves, lines, shapes, fill colors and gradients. Can be created by Inkscape or Adobe Illustrator or by using a vector format such
 as svg (scalable vector graphic) that makes it possible to include responsive vector graphics in a webpage
@@ -176,5 +181,5 @@ as svg (scalable vector graphic) that makes it possible to include responsive ve
 The advantage of the vector file formats over raster file formats is that the browser can
 render a vector image at any size. After all vectors graphics describe the geometry of the image and not the individuals dots of color.
 
-
+Latency - delay between request and response.
 
