@@ -55,7 +55,9 @@ Weigh the costs between linked css and @media:
 * @media: fewer requests with bigger files
 
 Media queries that are most commonly used are `min-width` and `max-width`.
-The point at which the page changes layout is called a breakpoint.
+The point at which the page changes layout significantly is called a major breakpoint.
+Similar, minor breakpoints are only small changes to the layout (padding, margins, font size).
+
 
 ## <a name="flexbox"></a>Flexbox
 Illustration of the most common responsive flexbox layouts that reside inside
@@ -91,6 +93,8 @@ resulting in targets greater than the suggested 48 pixels wide and 48 pixels tal
 * [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
 hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%202/index.html)
 
+* * [`./Hometown 3`](./Hometown 3) implements the final part of the "Building the Home Town App" with the goal
+
 ## Responsive Tables
 Tables can force horizontal scrolling when the viewport is overflowed. There are several
 techniques to prevent this effect (hidden columns, no more tables, contained tables).
@@ -110,3 +114,27 @@ where every column becomes its own row with the table header beside it. Demo can
 * [`./responsive tables/containedtable.html`](./responsive tables/containedtable.html) implements the contained table technique where the table will take up the same width as the
 viewport, but will scroll within the viewport. The tables only has to be wrapped inside a div with `width: 100%` and `overflow-x: auto`. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/containedtable.html).
 
+## Fonts
+Ideal measure of the length of a line for the web lies around 65 characters per line (cpl).
+This needs to be taken into consideration when choosing the breakpoints. Fonts need to be
+big enough to read across any device.
+
+```css
+.goodfont {
+    font-size: 16px;
+    line-height: 1.2em;
+}
+.biggerfont {
+    font-size: 18px;
+    line-height: 1.25em;
+}
+```
+
+## Responsive Images
+"Create a product, don't re-imagine one for small screens. Great mobile products are created, never ported" - Brian Fling. Total file size depends on the number of pixels multiplied by the number of bits to store one pixel. For the improvement of the performance, images need to be as small as possible and compression as high as possible.
+This is supported by the fact, that the average webpage makes 56 requests for images.
+Each of these requests has a cost in page load where even small delays in pages can
+have a significant loss in traffic and revenue for that page.
+
+### Sizing
+With fixed image size (e.g., natural size of the image) resizing the window will cause cropping of the image and on mobile devices the image could end up being larger than the viewport, which means that in order to see the whole image one would have to scroll horizontally.
