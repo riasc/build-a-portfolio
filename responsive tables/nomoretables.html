@@ -1,0 +1,95 @@
+<!-- Implementation of the no more tables techniques to display tables without
+overflowing the viewport (Lesson 5) -->
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width", init-scale="1">
+    <style type="text/css">
+        body {
+            margin: 1em;
+        }
+
+
+        @media screen and (max-width: 500px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            th {
+                display: none;
+            }
+            /*
+             * Hide table header.
+             * Using display: none causes accessibility problems
+             * for peope using screen readers because the browsers
+             * will not report the column headers
+             */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            /* Table cells are now displayed as full width block elements,
+             * left padding needs to be added
+            */
+            td {
+                position: relative;
+                padding-left: 50%;
+            }
+
+            /* add row labels */
+            td:before {
+                position: absolute;
+                left: 6px;
+                content: attr(data-th);
+                font-weight: bold;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+          <th>Team</th>
+          <th>1st</th>
+          <th>2nd</th>
+          <th>3rd</th>
+          <th>4th</th>
+          <th>5th</th>
+          <th>6th</th>
+          <th>7th</th>
+          <th>8th</th>
+          <th>9th</th>
+          <th>Final</th>
+        </tr>
+        <tr>
+            <td data-th="Team">Toronto Blue Jays</td>
+            <td data-th="1st">0</td>
+            <td data-th="2nd">0</td>
+            <td data-th="3rd">0</td>
+            <td data-th="4th">4</td>
+            <td data-th="5th">0</td>
+            <td data-th="6th">1</td>
+            <td data-th="7th">0</td>
+            <td data-th="8th">0</td>
+            <td data-th="9th">0</td>
+            <td data-th="Final">5</td>
+        </tr>
+        <tr>
+            <td data-th="Team">San Francisco Giants</td>
+            <td data-th="1st">0</td>
+            <td data-th="2nd">0</td>
+            <td data-th="3rd">0</td>
+            <td data-th="4th">4</td>
+            <td data-th="5th">0</td>
+            <td data-th="6th">0</td>
+            <td data-th="7th">0</td>
+            <td data-th="8th">0</td>
+            <td data-th="9th">0</td>
+            <td data-th="Final">5</td>
+        </tr>
+    </table>
+</body>
+</html>

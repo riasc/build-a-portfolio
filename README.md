@@ -86,15 +86,22 @@ enough (greater than `300px`). Demo can be found [here](http://htmlpreview.githu
 A [viewport](#viewport) was added to the page with an initial scale set. Furthermore,
 the css was adjusted so that everything displays in a single column, that has been done
 with relative widths `(max-width: 100%)`. Finally, the touch targets on the navigation bar where increased by adding paddings to the <a> tag of the nav class `(padding: 1.5em)`,
-resulting in targets greater than the suggested 48 pixels wide and 48 pixels tall.
+resulting in targets greater than the suggested 48 pixels wide and 48 pixels tall. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown/index.html).
 
 * [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
-hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width.
+hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%202/index.html)
 
 ## Responsive Tables
 Tables can force horizontal scrolling when the viewport is overflowed. There are several
 techniques to prevent this effect (hidden columns, no more tables, contained tables).
 * [`./responsive tables/hiddencolumns.html`](./responsive tables/hiddencolumns.html)
-impelements the hidden columns approach where the columns are hidden based on their
+implements the hidden columns approach where the columns are hidden based on their
 importance as the viewport size gets smaller. In this example of baseball scores, only
-the short names of the team and the final scores are shown up to a viewport size of 400 pixels. If the viewport exceeds 400 pixels the long names of the teams and the scores of all innings are shown. `display: none` allows the standard cells to be hidden.
+the short names of the team and the final scores are shown up to a viewport size of 400 pixels. If the viewport exceeds 400 pixels the long names of the teams and the scores of all innings are shown. Cells can be hidden with the property `display: none`. However, the
+problem with this approach is that on smaller viewports the data is hidden completely. Needs to be applied with caution and if possible abbreviated data should used.
+Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/hiddencolumns.html).
+
+*[`./responsive tables/nomoretables.html`](./responsive tables/nomoretables.html) implements
+the no more tables technique where below a certain viewport width the table is collapsed and
+resembles a long list as opposed to a table data, allowing to display the whole data, no
+matter what the size of the viewport is. In a wider viewport (> 500 pixels) the whole table is visible, but as the viewport shrinks the table collapses where every column becomes its own row with the table header beside it. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/nomoretables.html).
