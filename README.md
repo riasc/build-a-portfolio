@@ -81,3 +81,8 @@ this layout has the sections stacked on top of one another. Breakpoints at 500px
 used content (e.g., navigation) off screen only showing them if the screen is large
 enough (greater than `300px`). Demo can be found [here](http://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/flexbox/offcanvas.html).
 
+## Building the Home Town App
+* [`./Hometown/`](./Hometown)
+* [`./Hometown 2`](./Hometown 2) implements the second part of the `Building the Home Town App` with the goal to pick a set of breakpoints and using one of the [flexbox patterns](## Flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather is arranged next to each other. Furthermore, the
+hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying
+margins around this container for devices with a greater width.
