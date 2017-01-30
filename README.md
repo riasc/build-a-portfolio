@@ -101,7 +101,12 @@ the short names of the team and the final scores are shown up to a viewport size
 problem with this approach is that on smaller viewports the data is hidden completely. Needs to be applied with caution and if possible abbreviated data should used.
 Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/hiddencolumns.html).
 
-*[`./responsive tables/nomoretables.html`](./responsive tables/nomoretables.html) implements
-the no more tables technique where below a certain viewport width the table is collapsed and
-resembles a long list as opposed to a table data, allowing to display the whole data, no
-matter what the size of the viewport is. In a wider viewport (> 500 pixels) the whole table is visible, but as the viewport shrinks the table collapses where every column becomes its own row with the table header beside it. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/nomoretables.html).
+* [`./responsive tables/nomoretables.html`](./responsive tables/nomoretables.html) implements the no more tables technique where below a certain viewport width the
+table is collapsed and resembles a long list as opposed to a table data, allowing to
+display the whole data, no matter what the size of the viewport is. In a wider viewport
+(> 500 pixels) the whole table is visible, but as the viewport shrinks the table collapses
+where every column becomes its own row with the table header beside it. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/nomoretables.html).
+
+* [`./responsive tables/containedtable.html`](./responsive tables/containedtable.html) implements the contained table technique where the table will take up the same width as the
+viewport, but will scroll within the viewport. The tables only has to be wrapped inside a div with `width: 100%` and `overflow-x: auto`. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/responsive%20tables/containedtable.html).
+
