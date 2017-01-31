@@ -475,11 +475,6 @@ footer a {
   .weather__today__temp span {
     font-size: 5em;
   }
-
-  /* background image will scale, and try to fit the content area */
-  .hero {
-    background-size: contain;
-  }
 }
 
 /* off canvas pattern until 600px */
