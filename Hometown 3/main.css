@@ -435,11 +435,11 @@ footer a {
 @media screen and (min-width: 600px) {
   /* scores and weather next to each other */
   .scores {
-    width: 50%;
+    width: 60%;
     order: 2;
   }
   .weather {
-    width: 50%;
+    width: 40%;
     order: 3;
   }
   .hero {
