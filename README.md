@@ -198,20 +198,31 @@ a way to include a file (e.g., image) inline as a base 64 encoded string using
 
 Serving the right image for every combination of device capabilities and display size is
 important. A problem with media queries is that they only refer to the viewport dimensions
-and not the actual display size of the image. Providing alternative files for the same image
-allow the browser to choose the best option for the viewport size and device capabilities.
+and not the actual display size of the image. Providing alternative files via sourceset
+for the same image allow the browser to choose the best option for the viewport size and
+device capabilities. There are two flavors of srcset, one using x to differentiate between
+device pixel ratios (DPR), and the other using w to describe the image's width.
 
+#### Reacting to Device Pixel Ratio
 ```html
-<img src="picture_1x.jpg" srcset="picture_1x.jpg 1x, picture_2x.jpg 2x" alt="PictureName">
+<img src="image_2x.jpg" srcset="image_2x.jpg 2x, image_1x.jpg 1x" alt="a cool image">
+````
+Set srcset equal to a comma separated string of filename multiplier pairs, where each
+multiplier must be an integer followed by an x. For example, 1x represents 1x displays
+and 2x represents displays with twice the pixel density, like Apple's Retina displays.
+Different screens have different pixel densities, more or less dots of color per square inch,
+the physical pixels. It can be read out through `window.devicePixelRatio`. The browser will
+download the image that best corresponds to its DPR
+([Pixel Density (PPI) List](http://pixensity.com/list/)). Also, note that there's a src
+attribute as a fallback.
+
+### Reacting to Image Width
+```html
+<img src="image_200.jpg" srcset="image_200.jpg 200w, image_100.jpg 100w" alt="a cool image">
 ```
-The 1x,2x syntax is called a Pixel Density Descriptor. This allows for an 1x device to
-only load the 1x image (default). Different screens have different pixel densities.
-
-* [Pixel Density (PPI) List](http://pixensity.com/list/)
-
-
-
-
-
-
-
+Set srcset equal to a comma separated string of filename widthDescriptor pairs, where each widthDescriptor is measured in pixels and must be an integer followed by a w. Here, the widthDescriptor gives the natural width of each image file, which enables the browser to
+choose the most appropriate image to request, depending on viewport size and DPR.
+(Without the widthDescriptor, the browser cannot know the width of an image without downloading it!)
+Also, note that there's a src attribute as a fallback.
+As an example: let's say the window is 400 pixels wide and let's say the image should be displayed at 50% width, that is 200 pixels wide. Being on a 2x display an images needs to be at least 400 pixels
+wide.
