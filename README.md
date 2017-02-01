@@ -3,6 +3,8 @@
 This project is part of the [Full Stack Web Developer Nanodegree](https://de.udacity.com/course/full-stack-web-developer-nanodegree--nd004/) with the goal of recreating
 a design mockup.
 
+##
+
 ## <a href="viewport"></a>Viewport
 The viewport defines the area the browser can render content to. Browser report the
 width in the number of DIPs (Device Independent Pixels) that is a unit of measurement
@@ -93,12 +95,12 @@ resulting in targets greater than the suggested 48 pixels wide and 48 pixels tal
 * [`./Hometown 2`](./Hometown 2) implements the second part of the "Building the Home Town App" with the goal to pick a set of breakpoints and using one of the [flexbox patterns](#flexbox) so that it works across different devices. At `600px` the first breakpoint is applied where the scores and the weather are arranged next to each other. Furthermore, the
 hamburger icon dissapears with the navigation bar appearing and the font-size of the header title is increased. In that regard, until `600px` the offcanvas flexbox pattern was implemented with the hamburger icon that lets one to display the navigation bar if required. Finally, the mostly fluid pattern is used at `800px`, limiting the container to `800px` and displaying margins around this container for devices with a greater width. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%202/index.html)
 
-* [`./Hometown 3`](./Hometown 3) implements the final part of the "Building the Home Town App" with the goal of updating the sports table, with the favorite team, break up the text
-if possible, include minor breakpoints and change the text so that it fits more naturally.
-The score table was updated with the last results of the football team from cologne.
-Setting `font-size: 14px; line-height: 1.2em;` in the content class applied the increased
+* [`./Hometown 3`](./Hometown 3) implements the final part of the "Building the Home Town App" with the goal of updating the sports table with the favorite team, breaking up the
+text if necessary, including minor breakpoints and include responsive images. The score
+table was updated with the last results of the football team from cologne. Setting
+`font-size: 14px; line-height: 1.2em;` in the content class applied the increased
 font-size for all the text on the page and improved its readability. Furthermore, minor breakpoints were applied to the weather section `(font-weight: bold; font-size: 5em;)`.
-Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%203/index.html)
+Weather icons were replaced by responsive ones. Demo can be found [here](https://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/Hometown%203/index.html)
 
 ## Responsive Tables
 Tables can force horizontal scrolling when the viewport is overflowed. There are several
@@ -173,13 +175,43 @@ Another common responsive use case is when an image should resize to fit the sma
 viewport without stretching or squashing the vmax unit can be applied. Its corresponds to one percent of the viewport width or height (whichever is greater). Setting
 `width: 100vmax; height: 100vmax;` the image responsively resizes to cover the viewport.
 
-There are two ways to store image responsively - raster and vectors:
-* Raster images: photographs and images are represented as a grid of individual dots of color. These images may come from camera or scanner and will be created with the html canvas elements.
-* Vector images: logos can be defined as a set of curves, lines, shapes, fill colors and gradients. Can be created by Inkscape or Adobe Illustrator or by using a vector format such
-as svg (scalable vector graphic) that makes it possible to include responsive vector graphics in a webpage
+The property `background-size` specifies the size of the background images. Setting
+`background-size: cover` ensures that the image is sized so that it is as small as possible
+while still completely filling its container. Likewise, `background-size: contain` ensures
+that the image is sized so that it is as large as possible while still being completely
+visible inside its container.
 
-The advantage of the vector file formats over raster file formats is that the browser can
-render a vector image at any size. After all vectors graphics describe the geometry of the image and not the individuals dots of color.
+There are two ways to store image responsively - raster and vectors. Raster images are
+photographs and images that are represented as a grid of individual dots of color. These images may come from camera or scanner and will be created with the html canvas elements.
+Vector images are logos that can be defined as a set of curves, lines, shapes, fill colors and gradients. Can be created by Inkscape or Adobe Illustrator or by using a vector
+format such as svg (scalable vector graphic) that makes it possible to include
+responsive vector graphics in a webpage. The advantage of the vector file formats
+over raster file formats is that the browser can render a vector image at any size.
+After all vectors graphics describe the geometry of the image and not the individuals
+dots of color.
 
-Latency - delay between request and response.
+Latency - delay between request and response. Number of file request can be just as
+significant as the size of the file requests. Latency is the new bottleneck. SVG and
+DataURI can inline images and thus reduce the number of file requests. DataURI provide
+a way to include a file (e.g., image) inline as a base 64 encoded string using
+`<img src="data:image/svg+xml:base64,[data]">`.
+
+Serving the right image for every combination of device capabilities and display size is
+important. A problem with media queries is that they only refer to the viewport dimensions
+and not the actual display size of the image. Providing alternative files for the same image
+allow the browser to choose the best option for the viewport size and device capabilities.
+
+```html
+<img src="picture_1x.jpg" srcset="picture_1x.jpg 1x, picture_2x.jpg 2x" alt="PictureName">
+```
+The 1x,2x syntax is called a Pixel Density Descriptor. This allows for an 1x device to
+only load the 1x image (default). Different screens have different pixel densities.
+
+* [Pixel Density (PPI) List](http://pixensity.com/list/)
+
+
+
+
+
+
 
