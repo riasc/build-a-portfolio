@@ -143,6 +143,8 @@ This is supported by the fact, that the average webpage makes 56 requests for im
 Each of these requests has a cost in page load where even small delays in pages can
 have a significant loss in traffic and revenue for that page.
 
+### Sizing
+
 With fixed image size (e.g., natural size of the image) resizing the window will cause cropping of the image and on mobile devices the image could end up being larger than the viewport, which means that in order to see the whole image one would have to scroll horizontally. When using relative sizing `(width: 100%)` it looks good in the smaller
 browser windows and on mobile devices, but the window is resized the image gets blurry.
 If `max-width: 100%` will only expand as wide as its natural width. Relative sizing also
@@ -243,7 +245,7 @@ In fact, if `sizes` is missing, the browser defaults `sizes` to `100vw`, meaning
 In this example, the browser knows that the image will be full viewport width if the browser's viewport is 400px wide or less, and half viewport width if greater than 400px. It knows that it has two image options - one with a natural width of 400px and the other 800px.
 
 ### The Picture Element
-Way to provide alternative sources for images files, such that the
+The picture element is a way to provide alternative sources for images files, such that the
 browser can choose depending on device capabilities.
 ```html
 <picture>
@@ -260,8 +262,5 @@ This also allows for art direction - to choose different images.
     <img src="small.jpg" alt="title">
 </picture>
 ```
-As not all browser support the picture element, the [picturefill polyfill javascript library](http://scottjehl.github.io/picturefill/) can be used to mimic this effect.
-
-###
-Images are not accessible to everyone to the same extent.
-screen reader (e.g., [chromeVOX](http://www.chromevox.com/))
+As not all browser support the picture element, [picturefill](http://scottjehl.github.io/picturefill/) can be used to mimic this effect. Images are not accessible to everyone to the same extent. Nevertheless, sites need to be reasonable even without images as with screen readers
+(e.g., [chromeVOX](http://www.chromevox.com/)) by using the `alt` attribute responsibly.
