@@ -241,3 +241,27 @@ Add a sizes attribute to the image with a media query and a vw value. srcset and
 In fact, if `sizes` is missing, the browser defaults `sizes` to `100vw`, meaning that it expects the image will display at the full viewport width. `sizes` gives the browser one more piece of information to ensure that it downloads the right image file based on the eventual display width of the image. Just to be clear, it does not actually resize the image - that's what CSS does.
 
 In this example, the browser knows that the image will be full viewport width if the browser's viewport is 400px wide or less, and half viewport width if greater than 400px. It knows that it has two image options - one with a natural width of 400px and the other 800px.
+
+### The Picture Element
+Way to provide alternative sources for images files, such that the
+browser can choose depending on device capabilities.
+```html
+<picture>
+    <source srcset="image.webp" type="image/webp"></source>
+    <source srcset="image.jpg" type=="image/jpeg"></source>
+    <img src="image.jpg" alt="title">
+</picture>
+```
+This also allows for art direction - to choose different images.
+```html
+<picture>
+    <source media="min-width: 650px" srcset="large.jpg"></source>
+    <source media="min-width: 465px" srcset="medium.jpg"></source>
+    <img src="small.jpg" alt="title">
+</picture>
+```
+As not all browser support the picture element, the [picturefill polyfill javascript library](http://scottjehl.github.io/picturefill/) can be used to mimic this effect.
+
+###
+Images are not accessible to everyone to the same extent.
+screen reader (e.g., [chromeVOX](http://www.chromevox.com/))
