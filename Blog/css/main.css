@@ -1,0 +1,74 @@
+
+body {
+    width: 100%;
+
+}
+
+
+article {
+ width: 50em;
+ border-bottom: 1px solid #ddd;
+ margin-bottom: 1em;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+}
+
+h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+figcaption {
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.icons {
+    width: 70%;
+    font-size: 3em;
+    list-style: none;
+    margin: auto;
+}
+
+ul li {
+        display: inline;
+    }
+
+.footer {
+    width: 70%;
+    font-size: 3em;
+    list-style: none;
+    margin: auto;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+
+
+/* do not extend further at 800px - add margins */
+@media screen and (min-width: 800px) {
+  .container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
