@@ -4,7 +4,6 @@ body {
 
 }
 
-
 article {
  width: 50em;
  border-bottom: 1px solid #ddd;
@@ -32,6 +31,7 @@ img {
 figcaption {
     color: red;
 }
+
 
 .container {
     display: flex;
@@ -61,7 +61,6 @@ ul li {
     color: black;
     margin: 0.5em 0.5em 0.5em 0.5em;
 }
-
 
 
 /* do not extend further at 800px - add margins */
