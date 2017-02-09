@@ -1,7 +1,10 @@
 # Project: Build a Portfolio
 ## Objective
 This project is part of the [Full Stack Web Developer Nanodegree](https://de.udacity.com/course/full-stack-web-developer-nanodegree--nd004/)
-with the goal of recreating a [design mockup](design-mockup-portfolio.pdf) that can be solved [here](./mockup).
+with the goal of recreating a [design mockup](design-mockup-portfolio.pdf). The final solution can be found [here](./mockup) with a live demo
+[here](http://htmlpreview.github.io/?https://github.com/riasc/build-a-portfolio/blob/master/mockup/index.html).
+
+
 
 ##
 HTML (Hyper Text Markup Language) is the standard markup language for describing the structure of web pages.
