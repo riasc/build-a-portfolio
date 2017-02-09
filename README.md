@@ -1,9 +1,19 @@
 # Project: Build a Portfolio
 ## Objective
-This project is part of the [Full Stack Web Developer Nanodegree](https://de.udacity.com/course/full-stack-web-developer-nanodegree--nd004/) with the goal of recreating
-a design mockup.
+This project is part of the [Full Stack Web Developer Nanodegree](https://de.udacity.com/course/full-stack-web-developer-nanodegree--nd004/)
+with the goal of recreating a [design mockup](design-mockup-portfolio.pdf) that can be solved [here](./mockup).
 
 ##
+HTML (Hyper Text Markup Language) is the standard markup language for describing the structure of web pages.
+Its elements are the building blocks of HTML pages and represented by tags that label pieces of content such
+as 'heading', 'paragraph', 'table'. Browser do not display the HTML tags, but use them to render content of
+the page. CSS (Cascading Style Sheets) describes how HTML elements are to be displayed on screen, paper,
+or in other media.
+
+## Frameworks
+Frameworks are collections of CSS classes that make page layout easy to implement.
+
+
 
 ## <a href="viewport"></a>Viewport
 The viewport defines the area the browser can render content to. Browser report the
@@ -244,17 +254,17 @@ In fact, if `sizes` is missing, the browser defaults `sizes` to `100vw`, meaning
 
 In this example, the browser knows that the image will be full viewport width if the browser's viewport is 400px wide or less, and half viewport width if greater than 400px. It knows that it has two image options - one with a natural width of 400px and the other 800px.
 
-### The Picture Element
 The picture element is a way to provide alternative sources for images files, such that the
 browser can choose depending on device capabilities.
 ```html
 <picture>
     <source srcset="image.webp" type="image/webp"></source>
-    <source srcset="image.jpg" type=="image/jpeg"></source>
+    <source srcset="image.jpg" type="image/jpeg"></source>
     <img src="image.jpg" alt="title">
 </picture>
 ```
-This also allows for art direction - to choose different images.
+This also allows for art direction - to choose different images. In this case `<img>` acts as a fallback, meaning that if no sources gets hit the image in this
+tag will be displayed. Also for browsers that don't support picture, the image will be displayed by default.
 ```html
 <picture>
     <source media="min-width: 650px" srcset="large.jpg"></source>
